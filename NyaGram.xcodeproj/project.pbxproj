@@ -1,0 +1,479 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		532125F02A0BF3F90034A3E2 /* NyaGramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532125EF2A0BF3F90034A3E2 /* NyaGramApp.swift */; };
+		532125F22A0BF3F90034A3E2 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532125F12A0BF3F90034A3E2 /* LogInView.swift */; };
+		532125F42A0BF3FB0034A3E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532125F32A0BF3FB0034A3E2 /* Assets.xcassets */; };
+		532125F72A0BF3FB0034A3E2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532125F62A0BF3FB0034A3E2 /* Preview Assets.xcassets */; };
+		532125FE2A0C1B060034A3E2 /* NyaButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532125FD2A0C1B060034A3E2 /* NyaButtonView.swift */; };
+		532126002A0C1C210034A3E2 /* NyaTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532125FF2A0C1C210034A3E2 /* NyaTextFieldView.swift */; };
+		5341BC272A10FDE7002CFBCA /* LoggedInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341BC262A10FDE6002CFBCA /* LoggedInViewModel.swift */; };
+		5341BC2A2A1101D6002CFBCA /* NyaTextFieldViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341BC292A1101D6002CFBCA /* NyaTextFieldViewModel.swift */; };
+		5341BC2C2A124BE1002CFBCA /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341BC2B2A124BE1002CFBCA /* ViewExtension.swift */; };
+		5341BC2E2A129C96002CFBCA /* NyaGramService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5341BC2D2A129C96002CFBCA /* NyaGramService.swift */; };
+		5346E5FF2A35EBC70043906E /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 5346E5FE2A35EBC70043906E /* swiftgen.yml */; };
+		5346E6012A35EE760043906E /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5346E6002A35EE760043906E /* Assets.swift */; };
+		534B747D2A0D3011000063A2 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B747C2A0D3011000063A2 /* RegisterView.swift */; };
+		534B747F2A0E45F4000063A2 /* LoggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B747E2A0E45F4000063A2 /* LoggedInView.swift */; };
+		534B74822A0E4DAD000063A2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 534B74812A0E4DAD000063A2 /* FirebaseAuth */; };
+		534B74842A0E4DAD000063A2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 534B74832A0E4DAD000063A2 /* FirebaseFirestore */; };
+		534B74862A0E4E88000063A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 534B74852A0E4E88000063A2 /* GoogleService-Info.plist */; };
+		534B748B2A0FD9AA000063A2 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B748A2A0FD9AA000063A2 /* RegisterViewModel.swift */; };
+		534B748E2A0FDDEB000063A2 /* NyaButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B748D2A0FDDEB000063A2 /* NyaButtonViewModel.swift */; };
+		534B74912A0FE8C8000063A2 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B74902A0FE8C8000063A2 /* LogInViewModel.swift */; };
+		53ADCB732A16B14700F1B9A4 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ADCB722A16B14700F1B9A4 /* NavigationManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		532125EC2A0BF3F90034A3E2 /* NyaGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NyaGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		532125EF2A0BF3F90034A3E2 /* NyaGramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyaGramApp.swift; sourceTree = "<group>"; };
+		532125F12A0BF3F90034A3E2 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		532125F32A0BF3FB0034A3E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		532125F62A0BF3FB0034A3E2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		532125FD2A0C1B060034A3E2 /* NyaButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyaButtonView.swift; sourceTree = "<group>"; };
+		532125FF2A0C1C210034A3E2 /* NyaTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyaTextFieldView.swift; sourceTree = "<group>"; };
+		5341BC262A10FDE6002CFBCA /* LoggedInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewModel.swift; sourceTree = "<group>"; };
+		5341BC292A1101D6002CFBCA /* NyaTextFieldViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyaTextFieldViewModel.swift; sourceTree = "<group>"; };
+		5341BC2B2A124BE1002CFBCA /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		5341BC2D2A129C96002CFBCA /* NyaGramService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyaGramService.swift; sourceTree = "<group>"; };
+		5346E5FE2A35EBC70043906E /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
+		5346E6002A35EE760043906E /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = SOURCE_ROOT; };
+		534B747C2A0D3011000063A2 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		534B747E2A0E45F4000063A2 /* LoggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInView.swift; sourceTree = "<group>"; };
+		534B74852A0E4E88000063A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		534B748A2A0FD9AA000063A2 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		534B748D2A0FDDEB000063A2 /* NyaButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyaButtonViewModel.swift; sourceTree = "<group>"; };
+		534B74902A0FE8C8000063A2 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
+		53ADCB722A16B14700F1B9A4 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		532125E92A0BF3F90034A3E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				534B74822A0E4DAD000063A2 /* FirebaseAuth in Frameworks */,
+				534B74842A0E4DAD000063A2 /* FirebaseFirestore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		532125E32A0BF3F90034A3E2 = {
+			isa = PBXGroup;
+			children = (
+				5346E5FE2A35EBC70043906E /* swiftgen.yml */,
+				532125EE2A0BF3F90034A3E2 /* NyaGram */,
+				532125ED2A0BF3F90034A3E2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		532125ED2A0BF3F90034A3E2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				532125EC2A0BF3F90034A3E2 /* NyaGram.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		532125EE2A0BF3F90034A3E2 /* NyaGram */ = {
+			isa = PBXGroup;
+			children = (
+				532125EF2A0BF3F90034A3E2 /* NyaGramApp.swift */,
+				5341BC282A1101AA002CFBCA /* NyaTextField */,
+				534B748F2A0FE855000063A2 /* LogIn */,
+				534B748C2A0FDCA9000063A2 /* NyaButton */,
+				534B74922A10FD33000063A2 /* LoggedIn */,
+				534B74892A0FD931000063A2 /* Register */,
+				532125F32A0BF3FB0034A3E2 /* Assets.xcassets */,
+				5346E6002A35EE760043906E /* Assets.swift */,
+				534B74852A0E4E88000063A2 /* GoogleService-Info.plist */,
+				532125F52A0BF3FB0034A3E2 /* Preview Content */,
+				5341BC2B2A124BE1002CFBCA /* ViewExtension.swift */,
+				5341BC2D2A129C96002CFBCA /* NyaGramService.swift */,
+				53ADCB722A16B14700F1B9A4 /* NavigationManager.swift */,
+			);
+			path = NyaGram;
+			sourceTree = "<group>";
+		};
+		532125F52A0BF3FB0034A3E2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				532125F62A0BF3FB0034A3E2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5341BC282A1101AA002CFBCA /* NyaTextField */ = {
+			isa = PBXGroup;
+			children = (
+				532125FF2A0C1C210034A3E2 /* NyaTextFieldView.swift */,
+				5341BC292A1101D6002CFBCA /* NyaTextFieldViewModel.swift */,
+			);
+			name = NyaTextField;
+			sourceTree = "<group>";
+		};
+		534B74892A0FD931000063A2 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				534B747C2A0D3011000063A2 /* RegisterView.swift */,
+				534B748A2A0FD9AA000063A2 /* RegisterViewModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		534B748C2A0FDCA9000063A2 /* NyaButton */ = {
+			isa = PBXGroup;
+			children = (
+				532125FD2A0C1B060034A3E2 /* NyaButtonView.swift */,
+				534B748D2A0FDDEB000063A2 /* NyaButtonViewModel.swift */,
+			);
+			path = NyaButton;
+			sourceTree = "<group>";
+		};
+		534B748F2A0FE855000063A2 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				532125F12A0BF3F90034A3E2 /* LogInView.swift */,
+				534B74902A0FE8C8000063A2 /* LogInViewModel.swift */,
+			);
+			path = LogIn;
+			sourceTree = "<group>";
+		};
+		534B74922A10FD33000063A2 /* LoggedIn */ = {
+			isa = PBXGroup;
+			children = (
+				534B747E2A0E45F4000063A2 /* LoggedInView.swift */,
+				5341BC262A10FDE6002CFBCA /* LoggedInViewModel.swift */,
+			);
+			path = LoggedIn;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		532125EB2A0BF3F90034A3E2 /* NyaGram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 532125FA2A0BF3FB0034A3E2 /* Build configuration list for PBXNativeTarget "NyaGram" */;
+			buildPhases = (
+				532125E82A0BF3F90034A3E2 /* Sources */,
+				532125E92A0BF3F90034A3E2 /* Frameworks */,
+				532125EA2A0BF3F90034A3E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NyaGram;
+			packageProductDependencies = (
+				534B74812A0E4DAD000063A2 /* FirebaseAuth */,
+				534B74832A0E4DAD000063A2 /* FirebaseFirestore */,
+			);
+			productName = NyaGram;
+			productReference = 532125EC2A0BF3F90034A3E2 /* NyaGram.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		532125E42A0BF3F90034A3E2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					532125EB2A0BF3F90034A3E2 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = 532125E72A0BF3F90034A3E2 /* Build configuration list for PBXProject "NyaGram" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 532125E32A0BF3F90034A3E2;
+			packageReferences = (
+				534B74802A0E4DAD000063A2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
+			productRefGroup = 532125ED2A0BF3F90034A3E2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				532125EB2A0BF3F90034A3E2 /* NyaGram */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		532125EA2A0BF3F90034A3E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532125F72A0BF3FB0034A3E2 /* Preview Assets.xcassets in Resources */,
+				532125F42A0BF3FB0034A3E2 /* Assets.xcassets in Resources */,
+				534B74862A0E4E88000063A2 /* GoogleService-Info.plist in Resources */,
+				5346E5FF2A35EBC70043906E /* swiftgen.yml in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		532125E82A0BF3F90034A3E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532125F22A0BF3F90034A3E2 /* LogInView.swift in Sources */,
+				5341BC2E2A129C96002CFBCA /* NyaGramService.swift in Sources */,
+				532125F02A0BF3F90034A3E2 /* NyaGramApp.swift in Sources */,
+				534B747F2A0E45F4000063A2 /* LoggedInView.swift in Sources */,
+				5341BC2A2A1101D6002CFBCA /* NyaTextFieldViewModel.swift in Sources */,
+				534B748B2A0FD9AA000063A2 /* RegisterViewModel.swift in Sources */,
+				532126002A0C1C210034A3E2 /* NyaTextFieldView.swift in Sources */,
+				5341BC2C2A124BE1002CFBCA /* ViewExtension.swift in Sources */,
+				5346E6012A35EE760043906E /* Assets.swift in Sources */,
+				534B747D2A0D3011000063A2 /* RegisterView.swift in Sources */,
+				534B74912A0FE8C8000063A2 /* LogInViewModel.swift in Sources */,
+				5341BC272A10FDE7002CFBCA /* LoggedInViewModel.swift in Sources */,
+				534B748E2A0FDDEB000063A2 /* NyaButtonViewModel.swift in Sources */,
+				532125FE2A0C1B060034A3E2 /* NyaButtonView.swift in Sources */,
+				53ADCB732A16B14700F1B9A4 /* NavigationManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		532125F82A0BF3FB0034A3E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		532125F92A0BF3FB0034A3E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		532125FB2A0BF3FB0034A3E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NyaGram/Preview Content\"";
+				DEVELOPMENT_TEAM = 8XBPWTKSK3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.natalcia.NyaGram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		532125FC2A0BF3FB0034A3E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"NyaGram/Preview Content\"";
+				DEVELOPMENT_TEAM = 8XBPWTKSK3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.natalcia.NyaGram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		532125E72A0BF3F90034A3E2 /* Build configuration list for PBXProject "NyaGram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				532125F82A0BF3FB0034A3E2 /* Debug */,
+				532125F92A0BF3FB0034A3E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		532125FA2A0BF3FB0034A3E2 /* Build configuration list for PBXNativeTarget "NyaGram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				532125FB2A0BF3FB0034A3E2 /* Debug */,
+				532125FC2A0BF3FB0034A3E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		534B74802A0E4DAD000063A2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		534B74812A0E4DAD000063A2 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 534B74802A0E4DAD000063A2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		534B74832A0E4DAD000063A2 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 534B74802A0E4DAD000063A2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 532125E42A0BF3F90034A3E2 /* Project object */;
+}
