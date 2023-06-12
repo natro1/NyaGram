@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import Firebase
+import FirebaseAuth
 
 class RegisterViewModel: ObservableObject {
     
@@ -27,22 +27,44 @@ class RegisterViewModel: ObservableObject {
     }
     
     private func login() {
-        service.login(email, password) { success, error in
-            if success {
-                self.path.append(.loggedInView)
+        service.login(email, password) { error in
+            if let safeError = error {
+                self.handleErrors(safeError)
             } else {
-
+                self.path.append(.loggedInView)
             }
         }
     }
     
     private func register() {
-        service.register(email, password) { success in
-            if success {
-                self.login()
+        service.register(email, password) { error in
+            if let safeError = error {
+                self.handleErrors(safeError)
             } else {
-                
+                self.login()
             }
+        }
+    }
+    
+    private func handleErrors(_ error: Error) {
+        print("Handle errors:")
+        let nsError = error as NSError
+        switch nsError.code {
+        case AuthErrorCode.invalidEmail.rawValue:
+            print("Invalid email")
+        case AuthErrorCode.emailAlreadyInUse.rawValue:
+            print("Email already in use")
+        case AuthErrorCode.weakPassword.rawValue:
+            print("Weak password")
+        case AuthErrorCode.wrongPassword.rawValue:
+            print("Wrong password")
+        case AuthErrorCode.userNotFound.rawValue:
+            print("There is no user with this identifier")
+        case AuthErrorCode.networkError.rawValue:
+            print("Check your internet connection")
+        default:
+            print(nsError.code)
+            print("Unknown error: \(nsError.localizedDescription)")
         }
     }
 }

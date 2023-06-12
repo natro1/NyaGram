@@ -27,31 +27,32 @@ class LogInViewModel: ObservableObject {
     }
     
     private func login() {
-        service.login(email, password) { success, error in
-            if success {
+        service.login(email, password) { error in
+            if let safeError = error {
+                self.handleErrors(safeError)
+                self.displayError = true
+            } else {
                 self.path.append(.loggedInView)
                 self.displayError = false
-            } else {
-                self.handleErrors(error)
-                self.displayError = true
             }
         }
     }
     
-    func handleErrors(_ error: Error?) {
-        if let maybeError = error {
-            let error = maybeError as NSError
-            switch error.code {
-            case AuthErrorCode.wrongPassword.rawValue:
-                print("Wrong password")
-            case AuthErrorCode.userNotFound.rawValue:
-                print("There is no user with this identifier")
-            case AuthErrorCode.networkError.rawValue:
-                print("Check your internet connection")
-            default:
-                print(error.code)
-                print("Unknown error: \(error.localizedDescription)")
-            }
+    private func handleErrors(_ error: Error) {
+        print("Handle errors:")
+        let nsError = error as NSError
+        switch nsError.code {
+        case AuthErrorCode.invalidEmail.rawValue:
+            print("Invalid email")
+        case AuthErrorCode.wrongPassword.rawValue:
+            print("Wrong password")
+        case AuthErrorCode.userNotFound.rawValue:
+            print("There is no user with this identifier")
+        case AuthErrorCode.networkError.rawValue:
+            print("Check your internet connection")
+        default:
+            print(nsError.code)
+            print("Unknown error: \(nsError.localizedDescription)")
         }
     }
 }
