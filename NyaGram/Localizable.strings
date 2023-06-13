@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  NyaGram
+
+  Created by Natalia Rojek on 13/06/2023.
+  
+*/
+"nyaGram" = " NyaGram";
+"login" = "Log In";
+"register" = "Register";
+"logout" = "Log Out";
+"signUp" = "Sign Up";
+"email" = "Email";
+"password" = "Password";
+"invalidEmail" = "Invalid email.";
+"wrongPassword" = "Wrong password.";
+"noUserWithThisID" = "There is no user with this identifier.";
+"checkConnection" = "Check your internet connection.";
+"unknownError" = "Unknown error. Try again later.";
+"emailInUse" = "Email already in use.";
+"weakPassword" = "Weak password";
+"noAccountText" = "Don't have an account?";
+"backwardArrow" = "arrow.backward";

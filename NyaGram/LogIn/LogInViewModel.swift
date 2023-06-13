@@ -15,8 +15,10 @@ class LogInViewModel: ObservableObject {
     @Published var password: String = ""
     @Binding private var path: [Screens]
     @Published var displayError = false
-    var loginButtonVM = NyaButtonViewModel(title: "Log In")
-    var registerButtonVM = NyaButtonViewModel(title: "Register")
+    var loginButtonVM = NyaButtonViewModel(title: NyaStrings.login)
+    var registerButtonVM = NyaButtonViewModel(title: NyaStrings.register)
+    var errorLabelText = ""
+    @Published var showError: Bool = false
     
     init(path: Binding<[Screens]>) {
         self._path = path
@@ -29,30 +31,27 @@ class LogInViewModel: ObservableObject {
     private func login() {
         service.login(email, password) { error in
             if let safeError = error {
+                self.showError = true
                 self.handleErrors(safeError)
-                self.displayError = true
             } else {
                 self.path.append(.loggedInView)
-                self.displayError = false
             }
         }
     }
     
     private func handleErrors(_ error: Error) {
-        print("Handle errors:")
         let nsError = error as NSError
         switch nsError.code {
         case AuthErrorCode.invalidEmail.rawValue:
-            print("Invalid email")
+            errorLabelText = NyaStrings.invalidEmail
         case AuthErrorCode.wrongPassword.rawValue:
-            print("Wrong password")
+            errorLabelText = NyaStrings.wrongPassword
         case AuthErrorCode.userNotFound.rawValue:
-            print("There is no user with this identifier")
+            errorLabelText = NyaStrings.noUserWithThisID
         case AuthErrorCode.networkError.rawValue:
-            print("Check your internet connection")
+            errorLabelText = NyaStrings.checkConnection
         default:
-            print(nsError.code)
-            print("Unknown error: \(nsError.localizedDescription)")
+            errorLabelText = NyaStrings.unknownError
         }
     }
 }

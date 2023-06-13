@@ -28,6 +28,8 @@
 		534B748E2A0FDDEB000063A2 /* NyaButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B748D2A0FDDEB000063A2 /* NyaButtonViewModel.swift */; };
 		534B74912A0FE8C8000063A2 /* LogInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 534B74902A0FE8C8000063A2 /* LogInViewModel.swift */; };
 		53ADCB732A16B14700F1B9A4 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53ADCB722A16B14700F1B9A4 /* NavigationManager.swift */; };
+		53F394C12A38CB60000233E8 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53F394C02A38CB60000233E8 /* Localizable.strings */; };
+		53F394C32A38CE8D000233E8 /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F394C22A38CE8D000233E8 /* Strings+Generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		534B748D2A0FDDEB000063A2 /* NyaButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyaButtonViewModel.swift; sourceTree = "<group>"; };
 		534B74902A0FE8C8000063A2 /* LogInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewModel.swift; sourceTree = "<group>"; };
 		53ADCB722A16B14700F1B9A4 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		53F394C02A38CB60000233E8 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		53F394C22A38CE8D000233E8 /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Strings+Generated.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 				5341BC2B2A124BE1002CFBCA /* ViewExtension.swift */,
 				5341BC2D2A129C96002CFBCA /* NyaGramService.swift */,
 				53ADCB722A16B14700F1B9A4 /* NavigationManager.swift */,
+				53F394C22A38CE8D000233E8 /* Strings+Generated.swift */,
+				53F394C02A38CB60000233E8 /* Localizable.strings */,
 			);
 			path = NyaGram;
 			sourceTree = "<group>";
@@ -221,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53F394C12A38CB60000233E8 /* Localizable.strings in Resources */,
 				532125F72A0BF3FB0034A3E2 /* Preview Assets.xcassets in Resources */,
 				532125F42A0BF3FB0034A3E2 /* Assets.xcassets in Resources */,
 				534B74862A0E4E88000063A2 /* GoogleService-Info.plist in Resources */,
@@ -241,6 +248,7 @@
 				534B747F2A0E45F4000063A2 /* LoggedInView.swift in Sources */,
 				5341BC2A2A1101D6002CFBCA /* NyaTextFieldViewModel.swift in Sources */,
 				534B748B2A0FD9AA000063A2 /* RegisterViewModel.swift in Sources */,
+				53F394C32A38CE8D000233E8 /* Strings+Generated.swift in Sources */,
 				532126002A0C1C210034A3E2 /* NyaTextFieldView.swift in Sources */,
 				5341BC2C2A124BE1002CFBCA /* ViewExtension.swift in Sources */,
 				5346E6012A35EE760043906E /* Assets.swift in Sources */,

@@ -17,7 +17,6 @@ struct NyaGramService {
     ) {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if error != nil {
-                print(error!.localizedDescription)
                 return completion(error)
             } else {
                 return completion(nil)

@@ -14,8 +14,10 @@ class RegisterViewModel: ObservableObject {
     @Published var password = ""
     @Binding private var path: [Screens]
     private var service = NyaGramService()
+    var errorLabelText = ""
+    @Published var showError = false
     
-    var signUpButtonVM = NyaButtonViewModel(title: "Sign Up")
+    var signUpButtonVM = NyaButtonViewModel(title: NyaStrings.signUp)
     
     init(path: Binding<[Screens]>) {
         self._path = path
@@ -29,6 +31,7 @@ class RegisterViewModel: ObservableObject {
     private func login() {
         service.login(email, password) { error in
             if let safeError = error {
+                self.showError = true
                 self.handleErrors(safeError)
             } else {
                 self.path.append(.loggedInView)
@@ -39,6 +42,7 @@ class RegisterViewModel: ObservableObject {
     private func register() {
         service.register(email, password) { error in
             if let safeError = error {
+                self.showError = true
                 self.handleErrors(safeError)
             } else {
                 self.login()
@@ -47,24 +51,22 @@ class RegisterViewModel: ObservableObject {
     }
     
     private func handleErrors(_ error: Error) {
-        print("Handle errors:")
         let nsError = error as NSError
         switch nsError.code {
         case AuthErrorCode.invalidEmail.rawValue:
-            print("Invalid email")
+            errorLabelText = NyaStrings.invalidEmail
         case AuthErrorCode.emailAlreadyInUse.rawValue:
-            print("Email already in use")
+            errorLabelText = NyaStrings.emailInUse
         case AuthErrorCode.weakPassword.rawValue:
-            print("Weak password")
+            errorLabelText = NyaStrings.weakPassword
         case AuthErrorCode.wrongPassword.rawValue:
-            print("Wrong password")
+            errorLabelText = NyaStrings.wrongPassword
         case AuthErrorCode.userNotFound.rawValue:
-            print("There is no user with this identifier")
+            errorLabelText = NyaStrings.noUserWithThisID
         case AuthErrorCode.networkError.rawValue:
-            print("Check your internet connection")
+            errorLabelText = NyaStrings.checkConnection
         default:
-            print(nsError.code)
-            print("Unknown error: \(nsError.localizedDescription)")
+            errorLabelText = NyaStrings.unknownError
         }
     }
 }

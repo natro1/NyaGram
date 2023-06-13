@@ -20,17 +20,16 @@ struct LogInView: View {
             NyaColors.white.swiftUIColor
                 .ignoresSafeArea()
             VStack(spacing: 20) {
-                NyaTextFieldView(viewModel: .init(title: "Email", isSecured: false, text: $viewModel.email))
+                NyaTextFieldView(viewModel: .init(title: NyaStrings.email, isSecured: false, text: $viewModel.email))
                     .padding(.top, 80)
-                NyaTextFieldView(viewModel: .init(title: "Password", isSecured: true, text: $viewModel.password))
-                if viewModel.displayError {
-                    Text("Invalid email or password")
-                        .foregroundColor(.red)
-                }
+                NyaTextFieldView(viewModel: .init(title: NyaStrings.password, isSecured: true, text: $viewModel.password))
+                Text(viewModel.errorLabelText)
+                    .foregroundColor(.red)
+                    .opacity(viewModel.showError ? 1 : 0)
                 NyaButtonView(viewModel: viewModel.loginButtonVM)
                     .padding(.top, 30)
                 Spacer()
-                Text("Don't have an account?")
+                Text(NyaStrings.noAccountText)
                     .foregroundColor(NyaColors.darkBlue.swiftUIColor)
                     .font(.system(size: 25))
                 NyaButtonView(viewModel: viewModel.registerButtonVM)
@@ -40,7 +39,7 @@ struct LogInView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
-                    Text("NyaGram")
+                    Text(NyaStrings.nyaGram)
                         .font(.system(size: 35, weight: .bold))
                         .foregroundColor(NyaColors.white.swiftUIColor)
                 }
@@ -55,6 +54,7 @@ struct LogInView: View {
         .onDisappear {
             viewModel.email = ""
             viewModel.password = ""
+            viewModel.showError = false
         }
     }
     }

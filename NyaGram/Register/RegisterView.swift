@@ -21,8 +21,11 @@ struct RegisterView: View {
                 NyaColors.white.swiftUIColor
                     .ignoresSafeArea()
                 VStack(spacing: 20) {
-                    NyaTextFieldView(viewModel: .init(title: "Email", isSecured: false, text: $viewModel.email))
-                    NyaTextFieldView(viewModel: .init(title: "Password", isSecured: true, text: $viewModel.password))
+                    NyaTextFieldView(viewModel: .init(title: NyaStrings.email, isSecured: false, text: $viewModel.email))
+                    NyaTextFieldView(viewModel: .init(title: NyaStrings.password, isSecured: true, text: $viewModel.password))
+                    Text(viewModel.errorLabelText)
+                        .foregroundColor(.red)
+                        .opacity(viewModel.showError ? 1 : 0)
                     NyaButtonView(
                         viewModel: viewModel.signUpButtonVM
                     )
@@ -36,7 +39,7 @@ struct RegisterView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .principal) {
-                    Text("Register")
+                    Text(NyaStrings.register)
                         .font(.system(size: 20, weight: .bold))
                         .foregroundColor(NyaColors.white.swiftUIColor)
                 }
@@ -44,16 +47,13 @@ struct RegisterView: View {
                     Button(action: {
                         viewModel.goToRoot()
                     }) {
-                        Image(systemName: "arrow.backward")
+                        Image(systemName: NyaStrings.backwardArrow)
                             .foregroundColor(NyaColors.white.swiftUIColor)
                     }
                 }
             }
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarBackground(NyaColors.darkBlue.swiftUIColor, for: .navigationBar)
-//        .navigationDestination(isPresented: $viewModel.showNextScreen, destination: {
-//            LoggedInView()
-//        })
     }
     
     

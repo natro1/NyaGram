@@ -23,7 +23,7 @@ struct LoggedInView: View {
             Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
-                        Text("NyaGram")
+                        Text(NyaStrings.nyaGram)
                             .font(.system(size: 20, weight: .bold))
                             .foregroundColor(NyaColors.white.swiftUIColor)
                     }
@@ -32,7 +32,7 @@ struct LoggedInView: View {
                             viewModel.logOut()
                             
                         }) {
-                            Text("Log Out")
+                            Text(NyaStrings.logout)
                                 .foregroundColor(NyaColors.white.swiftUIColor)
                                 .font(.system(size: 15))
                         }
