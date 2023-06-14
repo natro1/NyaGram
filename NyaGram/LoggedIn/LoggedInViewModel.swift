@@ -11,6 +11,7 @@ import Firebase
 class LoggedInViewModel: ObservableObject {
     
     @Binding private var path: [Screens]
+    var photoButtonVM = NyaButtonViewModel(title: "Add a photo")
     
     init(path: Binding<[Screens]>) {
         self._path = path

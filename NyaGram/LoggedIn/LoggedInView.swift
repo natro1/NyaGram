@@ -15,13 +15,44 @@ struct LoggedInView: View {
     init(viewModel: LoggedInViewModel) {
         self.viewModel = viewModel
     }
-        
+    
     var body: some View {
         ZStack {
             NyaColors.white.swiftUIColor
                 .ignoresSafeArea()
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                .toolbar {
+            VStack {
+                ScrollView {
+                    VStack {
+                        Text("Test@test.com")
+                            .accentColor(NyaColors.darkPurple.swiftUIColor)
+                            .fontWeight(.bold)
+                        Image("testImage")
+                            .border(.white, width: 10)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(10)
+                    VStack {
+                        Text("Test@test.com")
+                            .accentColor(NyaColors.darkPurple.swiftUIColor)
+                            .fontWeight(.bold)
+                        Image("testImage")
+                            .border(.white, width: 10)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(10)
+                }
+                .padding(.bottom, 30)
+//                Button(action: {
+//
+//                }, label: {
+//                    Text("Add a photo")
+//                })
+//                .padding(10)
+//                .border(.green)
+                NyaButtonView(viewModel: viewModel.photoButtonVM)
+                Spacer()
+            }
+            .toolbar {
                     ToolbarItem(placement: .principal) {
                         Text(NyaStrings.nyaGram)
                             .font(.system(size: 20, weight: .bold))
