@@ -12,6 +12,8 @@ import Foundation
 internal enum NyaStrings {
   /// arrow.backward
   internal static let backwardArrow = NyaStrings.tr("Localizable", "backwardArrow", fallback: "arrow.backward")
+  /// camera
+  internal static let camera = NyaStrings.tr("Localizable", "camera", fallback: "camera")
   /// Check your internet connection.
   internal static let checkConnection = NyaStrings.tr("Localizable", "checkConnection", fallback: "Check your internet connection.")
   /// Email

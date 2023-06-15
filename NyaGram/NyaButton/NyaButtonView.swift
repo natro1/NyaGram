@@ -18,14 +18,26 @@ struct NyaButtonView: View {
         Button(action: {
             viewModel.action?()
         }) {
-            Text(viewModel.title)
-                .font(.system(size: 20))
-                .foregroundColor(NyaColors.white.swiftUIColor)
-                .fontWeight(.heavy)
-                .padding(.horizontal, 30)
-                .padding(.vertical, 10)
-                .background(NyaColors.darkPurple.swiftUIColor)
-                .cornerRadius(20)
+            if let title = viewModel.title {
+                Text(title)
+                    .font(.system(size: 20))
+                    .foregroundColor(NyaColors.white.swiftUIColor)
+                    .fontWeight(.heavy)
+                    .padding(.horizontal, 30)
+                    .padding(.vertical, 10)
+                    .background(NyaColors.darkPurple.swiftUIColor)
+                    .cornerRadius(20)
+            } else if let imageName = viewModel.imageName {
+                if let image = UIImage(systemName: imageName) {
+                    Image(uiImage: image)
+                        .renderingMode(.template)
+                        .foregroundColor(NyaColors.white.swiftUIColor)
+                        .padding(.vertical, 15)
+                        .padding(.horizontal, 20)
+                        .background(NyaColors.darkPurple.swiftUIColor)
+                        .cornerRadius(20)
+                }
+            }
         }
     }
 }
@@ -33,7 +45,7 @@ struct NyaButtonView: View {
 struct NyaButtonView_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            NyaButtonView(viewModel: .init(title: "test"))
+            NyaButtonView(viewModel: .init(imageName: "camera"))
         }
         .padding()
         .previewLayout(.sizeThatFits)
