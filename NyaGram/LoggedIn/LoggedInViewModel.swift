@@ -11,10 +11,17 @@ import Firebase
 class LoggedInViewModel: ObservableObject {
     
     @Binding private var path: [Screens]
+    @Published var selectedImage: UIImage?
+    @Published var sourceType: UIImagePickerController.SourceType = .photoLibrary
+    @Published var isImagePickerDisplayed = false
     var photoButtonVM = NyaButtonViewModel(imageName: NyaStrings.camera)
     
     init(path: Binding<[Screens]>) {
         self._path = path
+        photoButtonVM.action = {
+            self.sourceType = .photoLibrary
+            self.isImagePickerDisplayed.toggle()
+        }
     }
     
     func logOut() {

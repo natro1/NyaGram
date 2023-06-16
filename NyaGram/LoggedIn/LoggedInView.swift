@@ -23,56 +23,55 @@ struct LoggedInView: View {
             VStack {
                 ScrollView {
                     VStack {
-                        Text("Test@test.com")
-                            .accentColor(NyaColors.darkPurple.swiftUIColor)
-                            .fontWeight(.bold)
-                        Image("testImage")
-                            .border(.white, width: 10)
+                        if viewModel.selectedImage != nil {
+                            Text("Test@test.com")
+                                .accentColor(NyaColors.darkPurple.swiftUIColor)
+                                .fontWeight(.bold)
+                            Image(uiImage: viewModel.selectedImage!)
+                                .border(.white, width: 10)
+                        } else {
+                            Text("Don't be shy. Post some pictures!")
+                                .font(.system(size: 25, weight: .semibold))
+                                .padding(30)
+                                .foregroundColor(NyaColors.darkPurple.swiftUIColor)
+                        }
                     }
                     .frame(maxWidth: .infinity)
                     .padding(10)
-                    VStack {
-                        Text("Test@test.com")
-                            .accentColor(NyaColors.darkPurple.swiftUIColor)
-                            .fontWeight(.bold)
-                        Image("testImage")
-                            .border(.white, width: 10)
-                    }
                     .frame(maxWidth: .infinity)
                     .padding(10)
                 }
                 .padding(.bottom, 30)
-//                Button(action: {
-//
-//                }, label: {
-//                    Text("Add a photo")
-//                })
-//                .padding(10)
-//                .border(.green)
                 NyaButtonView(viewModel: viewModel.photoButtonVM)
                 Spacer()
             }
             .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Text(NyaStrings.nyaGram)
-                            .font(.system(size: 20, weight: .bold))
+                ToolbarItem(placement: .principal) {
+                    Text(NyaStrings.nyaGram)
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(NyaColors.white.swiftUIColor)
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        viewModel.logOut()
+                        
+                    }) {
+                        Text(NyaStrings.logout)
                             .foregroundColor(NyaColors.white.swiftUIColor)
-                    }
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {
-                            viewModel.logOut()
-                            
-                        }) {
-                            Text(NyaStrings.logout)
-                                .foregroundColor(NyaColors.white.swiftUIColor)
-                                .font(.system(size: 15))
-                        }
+                            .font(.system(size: 15))
                     }
                 }
-                .navigationBarBackButtonHidden(true)
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbarBackground(.visible, for: .navigationBar)
-                .toolbarBackground(NyaColors.darkBlue.swiftUIColor, for: .navigationBar)
+            }
+            .sheet(isPresented: $viewModel.isImagePickerDisplayed) {
+                ImagePickerView(
+                    selectedImage: $viewModel.selectedImage,
+                    sourceType: viewModel.sourceType
+                )
+            }
+            .navigationBarBackButtonHidden(true)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbarBackground(.visible, for: .navigationBar)
+            .toolbarBackground(NyaColors.darkBlue.swiftUIColor, for: .navigationBar)
         }
     }
     
