@@ -20,9 +20,11 @@ struct LogInView: View {
             NyaColors.white.swiftUIColor
                 .ignoresSafeArea()
             VStack(spacing: 20) {
-                NyaTextFieldView(viewModel: .init(title: NyaStrings.email, isSecured: false, text: $viewModel.email))
+                NyaTextFieldView(viewModel: .init(title: NyaStrings.email, isSecured: false, text: $viewModel.email, onSubmit: {}))
                     .padding(.top, 80)
-                NyaTextFieldView(viewModel: .init(title: NyaStrings.password, isSecured: true, text: $viewModel.password))
+                NyaTextFieldView(viewModel: .init(title: NyaStrings.password, isSecured: true, text: $viewModel.password, onSubmit: {
+                    self.viewModel.login()
+                }))
                 Text(viewModel.errorLabelText)
                     .foregroundColor(.red)
                     .opacity(viewModel.showError ? 1 : 0)

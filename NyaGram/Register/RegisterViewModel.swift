@@ -39,7 +39,7 @@ class RegisterViewModel: ObservableObject {
         }
     }
     
-    private func register() {
+    func register() {
         service.register(email, password) { error in
             if let safeError = error {
                 self.showError = true

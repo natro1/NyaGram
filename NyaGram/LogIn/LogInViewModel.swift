@@ -28,7 +28,7 @@ class LogInViewModel: ObservableObject {
         }
     }
     
-    private func login() {
+    func login() {
         service.login(email, password) { error in
             if let safeError = error {
                 self.showError = true

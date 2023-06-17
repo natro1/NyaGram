@@ -27,6 +27,9 @@ struct NyaTextFieldView: View {
                 .cornerRadius(15)
                 .overlay(RoundedRectangle(cornerRadius: 15)
                     .strokeBorder(NyaColors.darkBlue.swiftUIColor, style: StrokeStyle(lineWidth: 1.0)))
+                .onSubmit {
+                    viewModel.onSubmit()
+                }
         } else {
             TextField("", text: $viewModel.text)
                 .placeholder(when: viewModel.text.isEmpty) {
@@ -38,13 +41,16 @@ struct NyaTextFieldView: View {
                 .cornerRadius(15)
                 .overlay(RoundedRectangle(cornerRadius: 15)
                     .strokeBorder(NyaColors.darkBlue.swiftUIColor, style: StrokeStyle(lineWidth: 1.0)))
+                .onSubmit {
+                    viewModel.onSubmit()
+                }
         }
     }
 }
 
 struct LoginTextFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        NyaTextFieldView(viewModel: .init(title: "test", isSecured: false, text: .constant("")))
+        NyaTextFieldView(viewModel: .init(title: "test", isSecured: false, text: .constant(""), onSubmit: {}))
             .padding()
     }
 }
