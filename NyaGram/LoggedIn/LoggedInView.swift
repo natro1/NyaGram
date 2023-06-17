@@ -28,9 +28,12 @@ struct LoggedInView: View {
                                 .accentColor(NyaColors.darkPurple.swiftUIColor)
                                 .fontWeight(.bold)
                             Image(uiImage: viewModel.selectedImage!)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
                                 .border(.white, width: 10)
                         } else {
-                            Text("Don't be shy. Post some pictures!")
+                            Text(NyaStrings.dontBeShyText)
+                                .multilineTextAlignment(.center)
                                 .font(.system(size: 25, weight: .semibold))
                                 .padding(30)
                                 .foregroundColor(NyaColors.darkPurple.swiftUIColor)
@@ -42,7 +45,12 @@ struct LoggedInView: View {
                     .padding(10)
                 }
                 .padding(.bottom, 30)
-                NyaButtonView(viewModel: viewModel.photoButtonVM)
+                HStack {
+                    NyaButtonView(viewModel: viewModel.photoButtonVM)
+                    Spacer()
+                        .frame(width: 30)
+                    NyaButtonView(viewModel: viewModel.libraryButtonVM)
+                }
                 Spacer()
             }
             .toolbar {

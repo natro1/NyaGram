@@ -15,10 +15,15 @@ class LoggedInViewModel: ObservableObject {
     @Published var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @Published var isImagePickerDisplayed = false
     var photoButtonVM = NyaButtonViewModel(imageName: NyaStrings.camera)
+    var libraryButtonVM = NyaButtonViewModel(imageName: NyaStrings.photo)
     
     init(path: Binding<[Screens]>) {
         self._path = path
         photoButtonVM.action = {
+            self.sourceType = .camera
+            self.isImagePickerDisplayed.toggle()
+        }
+        libraryButtonVM.action = {
             self.sourceType = .photoLibrary
             self.isImagePickerDisplayed.toggle()
         }

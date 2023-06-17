@@ -16,6 +16,8 @@ internal enum NyaStrings {
   internal static let camera = NyaStrings.tr("Localizable", "camera", fallback: "camera")
   /// Check your internet connection.
   internal static let checkConnection = NyaStrings.tr("Localizable", "checkConnection", fallback: "Check your internet connection.")
+  /// Don't be shy. Post some pictures!
+  internal static let dontBeShyText = NyaStrings.tr("Localizable", "dontBeShyText", fallback: "Don't be shy. Post some pictures!")
   /// Email
   internal static let email = NyaStrings.tr("Localizable", "email", fallback: "Email")
   /// Email already in use.
@@ -37,6 +39,8 @@ internal enum NyaStrings {
   internal static let nyaGram = NyaStrings.tr("Localizable", "nyaGram", fallback: " NyaGram")
   /// Password
   internal static let password = NyaStrings.tr("Localizable", "password", fallback: "Password")
+  /// photo
+  internal static let photo = NyaStrings.tr("Localizable", "photo", fallback: "photo")
   /// Register
   internal static let register = NyaStrings.tr("Localizable", "register", fallback: "Register")
   /// Sign Up

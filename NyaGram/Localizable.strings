@@ -20,5 +20,7 @@
 "emailInUse" = "Email already in use.";
 "weakPassword" = "Weak password";
 "noAccountText" = "Don't have an account?";
+"dontBeShyText" = "Don't be shy. Post some pictures!";
 "backwardArrow" = "arrow.backward";
 "camera" = "camera";
+"photo" = "photo";
