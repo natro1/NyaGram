@@ -22,6 +22,8 @@ internal enum NyaStrings {
   internal static let email = NyaStrings.tr("Localizable", "email", fallback: "Email")
   /// Email already in use.
   internal static let emailInUse = NyaStrings.tr("Localizable", "emailInUse", fallback: "Email already in use.")
+  /// images
+  internal static let images = NyaStrings.tr("Localizable", "images", fallback: "images")
   /// Invalid email.
   internal static let invalidEmail = NyaStrings.tr("Localizable", "invalidEmail", fallback: "Invalid email.")
   /// Log In
@@ -47,6 +49,8 @@ internal enum NyaStrings {
   internal static let signUp = NyaStrings.tr("Localizable", "signUp", fallback: "Sign Up")
   /// Unknown error. Try again later.
   internal static let unknownError = NyaStrings.tr("Localizable", "unknownError", fallback: "Unknown error. Try again later.")
+  /// url
+  internal static let url = NyaStrings.tr("Localizable", "url", fallback: "url")
   /// Weak password
   internal static let weakPassword = NyaStrings.tr("Localizable", "weakPassword", fallback: "Weak password")
   /// Wrong password.

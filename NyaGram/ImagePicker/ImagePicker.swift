@@ -1,30 +1,30 @@
 //
-//  ImagePickerView.swift
+//  ImagePicker.swift
 //  NyaGram
 //
-//  Created by Natalia Rojek on 16/06/2023.
+//  Created by Natalia Rojek on 21/06/2023.
 //
 
 import SwiftUI
 
-struct ImagePickerView: UIViewControllerRepresentable {
+struct ImagePicker: UIViewControllerRepresentable {
     
     @Binding var selectedImage: UIImage?
-    @Environment(\.presentationMode) var isPresented
+    @Binding var isPickerDisplayed: Bool
     var sourceType: UIImagePickerController.SourceType
     
-    func makeUIViewController(context: Context) -> UIImagePickerController {
+    func makeUIViewController(context: Context) -> some UIViewController {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = self.sourceType
         imagePicker.delegate = context.coordinator
         return imagePicker
     }
     
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
         
     }
     
     func makeCoordinator() -> Coordinator {
-        return Coordinator(picker: self)
+        return Coordinator(self)
     }
 }

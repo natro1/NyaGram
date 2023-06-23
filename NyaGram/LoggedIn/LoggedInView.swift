@@ -6,7 +6,8 @@
 //
 
 import SwiftUI
-import Firebase
+import FirebaseStorage
+import FirebaseFirestore
 
 struct LoggedInView: View {
     
@@ -22,27 +23,7 @@ struct LoggedInView: View {
                 .ignoresSafeArea()
             VStack {
                 ScrollView {
-                    VStack {
-                        if viewModel.selectedImage != nil {
-                            Text("Test@test.com")
-                                .accentColor(NyaColors.darkPurple.swiftUIColor)
-                                .fontWeight(.bold)
-                            Image(uiImage: viewModel.selectedImage!)
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .border(.white, width: 10)
-                        } else {
-                            Text(NyaStrings.dontBeShyText)
-                                .multilineTextAlignment(.center)
-                                .font(.system(size: 25, weight: .semibold))
-                                .padding(30)
-                                .foregroundColor(NyaColors.darkPurple.swiftUIColor)
-                        }
-                    }
-                    .frame(maxWidth: .infinity)
-                    .padding(10)
-                    .frame(maxWidth: .infinity)
-                    .padding(10)
+                    NyaPostView()
                 }
                 .padding(.bottom, 30)
                 HStack {
@@ -70,9 +51,10 @@ struct LoggedInView: View {
                     }
                 }
             }
-            .sheet(isPresented: $viewModel.isImagePickerDisplayed) {
-                ImagePickerView(
+            .sheet(isPresented: $viewModel.isPickerDisplayed) {
+                ImagePicker(
                     selectedImage: $viewModel.selectedImage,
+                    isPickerDisplayed: $viewModel.isPickerDisplayed,
                     sourceType: viewModel.sourceType
                 )
             }

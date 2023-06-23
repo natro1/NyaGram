@@ -24,3 +24,5 @@
 "backwardArrow" = "arrow.backward";
 "camera" = "camera";
 "photo" = "photo";
+"images" = "images";
+"url" = "url";
