@@ -20,7 +20,7 @@ struct NyaGramService {
         _ password: String,
         _ completion: @escaping (_ error: Error?) -> Void
     ) {
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+        Auth.auth().signIn(withEmail: email, password: password) { _, error in
             if error != nil {
                 return completion(error)
             } else {
@@ -34,8 +34,7 @@ struct NyaGramService {
     _ password: String,
     _ completion: @escaping (_ error: Error?) -> Void
     ) {
-        Auth.auth().createUser(withEmail: email, password: password) { result, error in
-            
+        Auth.auth().createUser(withEmail: email, password: password) { _, error in
             if error != nil {
                 return completion(error)
             } else {
@@ -53,6 +52,7 @@ struct NyaGramService {
             return completion(error)
         }
     }
+    
     func uploadPhoto(image: UIImage?) {
         let storageRef = Storage.storage().reference()
         guard image != nil else { return }
@@ -61,8 +61,8 @@ struct NyaGramService {
         let fileRef = storageRef.child(path)
         _ = fileRef.putData(imageData!) { metadata, error in
             if error == nil && metadata != nil {
-                let db = Firestore.firestore()
-                db.collection(NyaStrings.images).document().setData([NyaStrings.url: path]) { error in
+                let database = Firestore.firestore()
+                database.collection(NyaStrings.images).document().setData([NyaStrings.url: path]) { error in
                     if error == nil {
                         
                     }
@@ -74,13 +74,14 @@ struct NyaGramService {
     func fetchPhotos(completion: @escaping ([UIImage]) -> Void) {
         var images = [UIImage]()
         let group = DispatchGroup()
-        
-        let db = Firestore.firestore()
-        db.collection(NyaStrings.images).getDocuments { snapshot, error in
+        let database = Firestore.firestore()
+        database.collection(NyaStrings.images).getDocuments { snapshot, error in
             if error == nil && snapshot != nil {
                 var paths = [String]()
                 for doc in snapshot!.documents {
+                    // swiftlint:disable force_cast
                     paths.append(doc[NyaStrings.url] as! String)
+                    // swiftlint:enable force_cast
                 }
                 for path in paths {
                     group.enter()

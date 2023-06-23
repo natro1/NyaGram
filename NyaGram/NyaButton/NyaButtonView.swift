@@ -15,9 +15,7 @@ struct NyaButtonView: View {
     }
     
     var body: some View {
-        Button(action: {
-            viewModel.action?()
-        }) {
+        Button(action: { viewModel.action?() }) {
             if let title = viewModel.title {
                 Text(title)
                     .font(.system(size: 20))

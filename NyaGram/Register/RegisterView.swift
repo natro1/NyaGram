@@ -21,10 +21,24 @@ struct RegisterView: View {
                 NyaColors.white.swiftUIColor
                     .ignoresSafeArea()
                 VStack(spacing: 20) {
-                    NyaTextFieldView(viewModel: .init(title: NyaStrings.email, isSecured: false, text: $viewModel.email, onSubmit: {}))
-                    NyaTextFieldView(viewModel: .init(title: NyaStrings.password, isSecured: true, text: $viewModel.password, onSubmit: {
-                        viewModel.register()
-                    }))
+                    NyaTextFieldView(
+                        viewModel: .init(
+                            title: NyaStrings.email,
+                            isSecured: false,
+                            text: $viewModel.email,
+                            onSubmit: {}
+                        )
+                    )
+                    NyaTextFieldView(
+                        viewModel: .init(
+                            title: NyaStrings.password,
+                            isSecured: true,
+                            text: $viewModel.password,
+                            onSubmit: {
+                                viewModel.register()
+                            }
+                        )
+                    )
                     Text(viewModel.errorLabelText)
                         .foregroundColor(.red)
                         .opacity(viewModel.showError ? 1 : 0)
@@ -57,7 +71,6 @@ struct RegisterView: View {
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbarBackground(NyaColors.darkBlue.swiftUIColor, for: .navigationBar)
     }
-    
     
     struct RegisterView_Previews: PreviewProvider {
         static var previews: some View {
