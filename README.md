@@ -9,5 +9,12 @@
 * Swiftgen
 * Swift Package Manager
 * Homebrew
-### Login Page
+## Login Page
 ![login page](resources/login.png)
+## Register
+![register](resources/register.png)
+## Posts
+![posts](resources/loggedin.png)
+### Work in progress
+* UITests
+* Add username to posted images
