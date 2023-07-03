@@ -11,11 +11,7 @@ import FirebaseFirestore
 
 struct LoggedInView: View {
     
-    @ObservedObject private var viewModel: LoggedInViewModel
-    
-    init(viewModel: LoggedInViewModel) {
-        self.viewModel = viewModel
-    }
+    @StateObject var viewModel: LoggedInViewModel
     
     var body: some View {
         ZStack {
@@ -23,8 +19,14 @@ struct LoggedInView: View {
                 .ignoresSafeArea()
             VStack {
                 ScrollView {
-                    NyaPostView()
+                    VStack {
+                        ForEach(viewModel.retrievedImages, id: \.self) { image in
+                            NyaPostView(viewModel: .init(image: image))
+                        }
+                    }
                 }
+                .frame(maxWidth: .infinity)
+                .padding(40)
                 .padding(.bottom, 30)
                 HStack {
                     NyaButtonView(viewModel: viewModel.photoButtonVM)
@@ -33,6 +35,9 @@ struct LoggedInView: View {
                     NyaButtonView(viewModel: viewModel.libraryButtonVM)
                 }
                 Spacer()
+            }
+            .onAppear {
+                viewModel.loadImages()
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {

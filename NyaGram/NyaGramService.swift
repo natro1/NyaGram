@@ -53,35 +53,48 @@ struct NyaGramService {
         }
     }
     
-    func uploadPhoto(image: UIImage?) {
-        let storageRef = Storage.storage().reference()
-        guard image != nil else { return }
-        let imageData = image!.jpegData(compressionQuality: 0.8)
-        guard imageData != nil else { return }
+    func uploadPhoto(image: UIImage?, completion: @escaping () -> Void) {
+        guard let safeImage = image else { return }
+        guard let imageData = safeImage.jpegData(
+            compressionQuality: 0.8
+        ) else { return }
         let fileRef = storageRef.child(path)
-        _ = fileRef.putData(imageData!) { metadata, error in
+        _ = fileRef.putData(imageData) { metadata, error in
             if error == nil && metadata != nil {
                 let database = Firestore.firestore()
-                database.collection(NyaStrings.images).document().setData([NyaStrings.url: path]) { error in
+                database.collection(NyaStrings.images).document().setData(
+                    [
+                        NyaStrings.url: path,
+                        "username": getCurrentUserEmail()
+                    ]
+                ) { error in
                     if error == nil {
-                        
+                        completion()
                     }
                 }
             }
         }
     }
     
+    func getCurrentUserEmail() -> String {
+        if let username = Auth.auth().currentUser?.email {
+            return username
+        } else {
+            return ""
+        }
+    }
+    
     func fetchPhotos(completion: @escaping ([UIImage]) -> Void) {
         var images = [UIImage]()
+//        var postData = [String: UIImage]()
         let group = DispatchGroup()
         let database = Firestore.firestore()
         database.collection(NyaStrings.images).getDocuments { snapshot, error in
             if error == nil && snapshot != nil {
                 var paths = [String]()
                 for doc in snapshot!.documents {
-                    // swiftlint:disable force_cast
+                    // swiftlint:disable:next force_cast
                     paths.append(doc[NyaStrings.url] as! String)
-                    // swiftlint:enable force_cast
                 }
                 for path in paths {
                     group.enter()
@@ -104,7 +117,6 @@ struct NyaGramService {
         firebaseURL: String,
         completion: @escaping (UIImage?) -> Void
     ) {
-        let storageRef = Storage.storage().reference()
         let fileRef = storageRef.child(firebaseURL)
         fileRef.getData(maxSize: 5 * 1024 * 1024) { data, error in
             if error == nil && data != nil {

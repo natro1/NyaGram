@@ -10,7 +10,6 @@ import UIKit
 class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     private var parent: ImagePicker
-    private let service = NyaGramService()
     
     init(_ picker: ImagePicker) {
         self.parent = picker
@@ -21,10 +20,7 @@ class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationContro
         didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
     ) {
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            DispatchQueue.main.async {
-                self.parent.selectedImage = image
-                self.service.uploadPhoto(image: self.parent.selectedImage)
-            }
+            self.parent.selectedImage = image
         }
         parent.isPickerDisplayed = false
     }

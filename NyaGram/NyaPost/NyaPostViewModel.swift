@@ -5,18 +5,12 @@
 //  Created by Natalia Rojek on 19/06/2023.
 //
 
-import SwiftUI
+import UIKit
 
 class NyaPostViewModel: ObservableObject {
+    var image: UIImage
     
-    @Published var images = [UIImage]()
-    private let service = NyaGramService()
-
-    func loadImages() {
-        service.fetchPhotos { imageArray in
-            DispatchQueue.main.async {
-                self.images = imageArray
-            }
-        }
+    init(image: UIImage) {
+        self.image = image
     }
 }
