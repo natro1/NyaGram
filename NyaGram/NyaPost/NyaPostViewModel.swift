@@ -8,9 +8,12 @@
 import UIKit
 
 class NyaPostViewModel: ObservableObject {
-    var image: UIImage
     
-    init(image: UIImage) {
+    var image: UIImage
+    var username: String
+    
+    init(image: UIImage, username: String) {
         self.image = image
+        self.username = username
     }
 }

@@ -17,17 +17,21 @@ struct NyaPostView: View {
 
     var body: some View {
         VStack {
+            Text(viewModel.username)
+                .foregroundColor(NyaColors.darkPurple.swiftUIColor)
+                .font(.system(size: 20, weight: .bold))
             Image(uiImage: viewModel.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .border(.white, width: 10)
+                .padding(.top, 1)
+                .padding(.bottom, 50)
         }
-        
     }
 }
 
 struct NyaPostView_Previews: PreviewProvider {
     static var previews: some View {
-        NyaPostView(viewModel: .init(image: .init()))
+        NyaPostView(viewModel: .init(image: .init(), username: "test"))
     }
 }

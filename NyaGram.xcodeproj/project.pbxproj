@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5313C98D2A54457E00674F51 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5313C98C2A54457E00674F51 /* Post.swift */; };
 		532125F02A0BF3F90034A3E2 /* NyaGramApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532125EF2A0BF3F90034A3E2 /* NyaGramApp.swift */; };
 		532125F22A0BF3F90034A3E2 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532125F12A0BF3F90034A3E2 /* LogInView.swift */; };
 		532125F42A0BF3FB0034A3E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 532125F32A0BF3FB0034A3E2 /* Assets.xcassets */; };
@@ -39,6 +40,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5313C98C2A54457E00674F51 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		532125EC2A0BF3F90034A3E2 /* NyaGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NyaGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		532125EF2A0BF3F90034A3E2 /* NyaGramApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NyaGramApp.swift; sourceTree = "<group>"; };
 		532125F12A0BF3F90034A3E2 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				532125EF2A0BF3F90034A3E2 /* NyaGramApp.swift */,
 				5341BC2B2A124BE1002CFBCA /* ViewExtension.swift */,
 				5341BC2D2A129C96002CFBCA /* NyaGramService.swift */,
+				5313C98C2A54457E00674F51 /* Post.swift */,
 				53ADCB722A16B14700F1B9A4 /* NavigationManager.swift */,
 				53A510762A409B7900E6F03F /* NyaPost */,
 				53A510752A4098BB00E6F03F /* ImagePicker */,
@@ -317,6 +320,7 @@
 				532126002A0C1C210034A3E2 /* NyaTextFieldView.swift in Sources */,
 				53ACF2C72A3C7F4100145B84 /* Coordinator.swift in Sources */,
 				5341BC2C2A124BE1002CFBCA /* ViewExtension.swift in Sources */,
+				5313C98D2A54457E00674F51 /* Post.swift in Sources */,
 				53A510782A409B9200E6F03F /* NyaPostView.swift in Sources */,
 				53A510872A43732F00E6F03F /* ImagePicker.swift in Sources */,
 				5346E6012A35EE760043906E /* Assets.swift in Sources */,

@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-import FirebaseStorage
-import FirebaseFirestore
 
 struct LoggedInView: View {
     
@@ -20,8 +18,8 @@ struct LoggedInView: View {
             VStack {
                 ScrollView {
                     VStack {
-                        ForEach(viewModel.retrievedImages, id: \.self) { image in
-                            NyaPostView(viewModel: .init(image: image))
+                        ForEach(viewModel.retrievedPosts, id: \.self) { post in
+                            NyaPostView(viewModel: .init(image: post.image, username: post.username))
                         }
                     }
                 }
@@ -37,7 +35,7 @@ struct LoggedInView: View {
                 Spacer()
             }
             .onAppear {
-                viewModel.loadImages()
+                viewModel.loadPosts()
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {

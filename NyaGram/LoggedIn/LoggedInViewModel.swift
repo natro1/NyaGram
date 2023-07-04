@@ -7,8 +7,6 @@
 
 import Combine
 import SwiftUI
-import FirebaseStorage
-import FirebaseFirestore
 
 class LoggedInViewModel: ObservableObject {
     
@@ -16,7 +14,7 @@ class LoggedInViewModel: ObservableObject {
     @Published var selectedImage: UIImage?
     @Published var sourceType: UIImagePickerController.SourceType = .photoLibrary
     @Published var isPickerDisplayed = false
-    @Published var retrievedImages = [UIImage]()
+    @Published var retrievedPosts = [Post]()
     var photoButtonVM = NyaButtonViewModel(imageName: NyaStrings.camera)
     var libraryButtonVM = NyaButtonViewModel(imageName: NyaStrings.photo)
     private let service = NyaGramService()
@@ -34,18 +32,18 @@ class LoggedInViewModel: ObservableObject {
         }
         $selectedImage.sink { newImage in
             if newImage != nil {
-                self.service.uploadPhoto(image: newImage) {
-                    self.loadImages()
+                self.service.uploadImage(image: newImage) {
+                    self.loadPosts()
                 }
             }
         }.store(in: &anyCancellable)
     }
     
-    func loadImages() {
-        service.fetchPhotos { imageArray in
+    func loadPosts() {
+        service.fetchPostData { postArray in
+            print("posts\(postArray)")
             DispatchQueue.main.async {
-                self.retrievedImages = imageArray
-                print("Load images: \(self.retrievedImages.count)")
+                self.retrievedPosts = postArray
             }
         }
     }

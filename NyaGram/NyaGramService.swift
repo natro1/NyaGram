@@ -13,7 +13,6 @@ import FirebaseFirestore
 struct NyaGramService {
     
     private let storageRef = Storage.storage().reference()
-    private let path = "images/\(UUID().uuidString).jpg"
 
     func login(
         _ email: String,
@@ -53,7 +52,8 @@ struct NyaGramService {
         }
     }
     
-    func uploadPhoto(image: UIImage?, completion: @escaping () -> Void) {
+    func uploadImage(image: UIImage?, completion: @escaping () -> Void) {
+        let path = "images/\(image.hashValue).jpg"
         guard let safeImage = image else { return }
         guard let imageData = safeImage.jpegData(
             compressionQuality: 0.8
@@ -65,7 +65,7 @@ struct NyaGramService {
                 database.collection(NyaStrings.images).document().setData(
                     [
                         NyaStrings.url: path,
-                        "username": getCurrentUserEmail()
+                        NyaStrings.username: getCurrentUserEmail()
                     ]
                 ) { error in
                     if error == nil {
@@ -84,31 +84,28 @@ struct NyaGramService {
         }
     }
     
-    func fetchPhotos(completion: @escaping ([UIImage]) -> Void) {
-        var images = [UIImage]()
-//        var postData = [String: UIImage]()
+    func fetchPostData(completion: @escaping ([Post]) -> Void) {
+        var postArray = [Post]()
         let group = DispatchGroup()
         let database = Firestore.firestore()
         database.collection(NyaStrings.images).getDocuments { snapshot, error in
             if error == nil && snapshot != nil {
-                var paths = [String]()
                 for doc in snapshot!.documents {
-                    // swiftlint:disable:next force_cast
-                    paths.append(doc[NyaStrings.url] as! String)
-                }
-                for path in paths {
-                    group.enter()
-                    downloadImage(firebaseURL: path) {
-                        guard let image = $0 else { return }
-                        images.append(image)
-                        group.leave()
+                    if let url = doc[NyaStrings.url] as? String,
+                       let username = doc[NyaStrings.username] as? String {
+                        group.enter()
+                        downloadImage(firebaseURL: url) {
+                            guard let image = $0 else { return }
+                            postArray.append(Post(image: image, username: username))
+                            group.leave()
+                        }
                     }
                 }
                 group.notify(queue: .main) {
-                    completion(images)
+                    completion(postArray)
                 }
             } else {
-                completion(images)
+                completion(postArray)
             }
         }
     }

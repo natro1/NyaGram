@@ -51,6 +51,8 @@ internal enum NyaStrings {
   internal static let unknownError = NyaStrings.tr("Localizable", "unknownError", fallback: "Unknown error. Try again later.")
   /// url
   internal static let url = NyaStrings.tr("Localizable", "url", fallback: "url")
+  /// username
+  internal static let username = NyaStrings.tr("Localizable", "username", fallback: "username")
   /// Weak password
   internal static let weakPassword = NyaStrings.tr("Localizable", "weakPassword", fallback: "Weak password")
   /// Wrong password.
